@@ -10,7 +10,7 @@
 //En app.component.html aparte de eliminar tedremos que tener el componente formulario
 //y el componente lista
 
-export class tAREA{
+export class Tareax{
     titulo: string;
     descripcion: string;
 

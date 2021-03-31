@@ -1,10 +1,30 @@
-<!-- A3 quiero que en el momento de pulsar en enviaar se recoja-->
+<!-- A3 quiero que en el momento de pulsar en enviaar se recoja los datos de los input 
+y yo los pueda enviar hacia afuera los pueda emitir hacia el componente padre
+hasta ahora hemos utilizado la directiva NGmodel entonces para seguir esta
+directiva hay que seguir una serie de pasos:
+1. dentro de app.model.ts tenemos que importar el modulo donde se encuentra la
+directiva ngModel en este caso es en FormsModule para que todos lo cimponentes lo conozcan-->
+
 <div>
     <label>Titulo</label>
-    <input type="text">
+    <!-- A6 con el ngModel a estos input engancharle las propiedades 
+        titulo y descripcion de la tarea -->
+    <input type="text" [(ngModel)]="nuevaTarea.titulo">
 </div>
 <div>
     <label>Descripcion</label>
-    <input type="text">
+    <input type="text" [(ngModel)]="nuevaTarea.descripcion">
 </div>
-<button>enviar</button>
+
+<!-- A6 para sersiorarnos de que funciona podemos intentar visualizar la nueva tarea 
+pero vemos que nos devuelve oject oject  cosa que no me interesa...enonces para ver
+su representacion en formato string le aplicamos |json lo que se vera mas adelante -->
+{{nuevaTarea |json}}
+
+<!-- A7 mi siguiente paso es interactuar con el botton enviar por lo tanto con el
+eveto click de  este boton 
+le defino el evento click  y como valor le voy a pasar el metodo que se va
+a ejecutar cuando interactue con este boton lo llamaremos onClick
+no vamos a poner $event poque solo queremos saber cuando se ha pulsado el boton
+vamos a definir la funcion onClick en formulario.component.ts-->
+<button (click)="onClick()">enviar</button>

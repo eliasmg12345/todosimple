@@ -1,3 +1,10 @@
 <!-- 2A vamos a empezar a construir el Formulario necesitamos el titulo y desc-->
-<app-formulario></app-formulario>
-<app-lista></app-lista>
+
+<!-- A11 capturando desde el padre:
+     aqui tengo que decirle que voya ainteractuar con el evento (tareaCreada) 
+    ...luego lo lanzo sobre la funcion que yo quiera  ejem onTareaCreada 
+     el cual definiremos en el ts-->
+<app-formulario (tareaCreada)="onTareaCreada($event)"></app-formulario>
+<!-- A13 pasando las tareas a la  lista  
+lo que tenemos que hacer es dentro del compoente lista generar un Input -->
+<app-lista></app-lista> 
